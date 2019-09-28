@@ -28,7 +28,7 @@ def save_statistics_to_file():
 
 option = ''
 
-while option != 8:
+while True:
     print("""
 Analizator tekstu
     
@@ -76,6 +76,10 @@ Podaj numer opcji: """)
     elif option == 7:
         print('Save statistics to file')
         save_statistics_to_file()
+
+    elif option == 8:
+        print('Koniec programu')
+        break
 
     else:
         print('Nie ma takiej opcji!')
