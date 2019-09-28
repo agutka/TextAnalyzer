@@ -30,9 +30,9 @@ option = ''
 
 while option != 8:
     print("""
-    Analizator tekstu
+Analizator tekstu
     
-    Menu:
+Menu:
     1. Pobierz plik z internetu
     2. Zlicz liczbę liter w pobranym pliku
     3. Zlicz liczbę wyrazów w pliku
@@ -42,7 +42,6 @@ while option != 8:
     7. Zapisz statystyki z punktów 2-5 do pliku statystyki.txt
     8. Wyjście z programu
     
-    Podaj numer opcji: 
-    """)
+Podaj numer opcji: """)
 
     option = input()
