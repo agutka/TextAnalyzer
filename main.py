@@ -10,7 +10,7 @@ def count_words():
     pass
 
 
-def count_punctation_marks():
+def count_punctuation_marks():
     pass
 
 
