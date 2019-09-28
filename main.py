@@ -44,4 +44,7 @@ Menu:
     
 Podaj numer opcji: """)
 
-    option = int(input())
+    try:
+        option = int(input())
+    except:
+        print('Musisz podać liczbę!')
