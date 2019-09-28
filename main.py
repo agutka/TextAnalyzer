@@ -44,4 +44,4 @@ Menu:
     
 Podaj numer opcji: """)
 
-    option = input()
+    option = int(input())
