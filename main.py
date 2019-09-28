@@ -1,3 +1,31 @@
+def download_file():
+    pass
+
+
+def count_letter():
+    pass
+
+
+def count_words():
+    pass
+
+
+def count_punctation_marks():
+    pass
+
+
+def count_sentences():
+    pass
+
+
+def generate_report_of_letters_usage():
+    pass
+
+
+def save_statistics_to_file():
+    pass
+
+
 option = ''
 
 while option != 8:
