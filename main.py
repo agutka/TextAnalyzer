@@ -22,10 +22,11 @@ class TextAnalyzer:
         pass
 
 
-option = ''
+def main_loop():
+    option = ''
 
-while True:
-    print("""
+    while True:
+        print("""
 Analizator tekstu
     
 Menu:
@@ -40,42 +41,42 @@ Menu:
     
 Podaj numer opcji: """)
 
-    try:
-        option = int(input())
-    except:
-        print('Musisz podać liczbę!')
+        try:
+            option = int(input())
+        except:
+            print('Musisz podać liczbę!')
 
-    if option == 1:
-        print('Download file')
-        download_file()
+        if option == 1:
+            print('Download file')
+            download_file()
 
-    elif option == 2:
-        print('Count letters')
-        count_letter()
+        elif option == 2:
+            print('Count letters')
+            count_letter()
 
-    elif option == 3:
-        print('Count words')
-        count_words()
+        elif option == 3:
+            print('Count words')
+            count_words()
 
-    elif option == 4:
-        print('Count punctuation marks')
-        count_punctuation_marks()
+        elif option == 4:
+            print('Count punctuation marks')
+            count_punctuation_marks()
 
-    elif option == 5:
-        print('Count sentences')
-        count_sentences()
+        elif option == 5:
+            print('Count sentences')
+            count_sentences()
 
-    elif option == 6:
-        print('Generate report of letters usage')
-        generate_report_of_letters_usage()
+        elif option == 6:
+            print('Generate report of letters usage')
+            generate_report_of_letters_usage()
 
-    elif option == 7:
-        print('Save statistics to file')
-        save_statistics_to_file()
+        elif option == 7:
+            print('Save statistics to file')
+            save_statistics_to_file()
 
-    elif option == 8:
-        print('Koniec programu')
-        break
+        elif option == 8:
+            print('Koniec programu')
+            break
 
-    else:
-        print('Nie ma takiej opcji!')
+        else:
+            print('Nie ma takiej opcji!')
