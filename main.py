@@ -1,29 +1,25 @@
-def download_file():
-    pass
+class TextAnalyzer:
 
+    def download_file(self):
+        pass
 
-def count_letter():
-    pass
+    def count_letter(self):
+        pass
 
+    def count_words(self):
+        pass
 
-def count_words():
-    pass
+    def count_punctuation_marks(self):
+        pass
 
+    def count_sentences(self):
+        pass
 
-def count_punctuation_marks():
-    pass
+    def generate_report_of_letters_usage(self):
+        pass
 
-
-def count_sentences():
-    pass
-
-
-def generate_report_of_letters_usage():
-    pass
-
-
-def save_statistics_to_file():
-    pass
+    def save_statistics_to_file(self):
+        pass
 
 
 option = ''
