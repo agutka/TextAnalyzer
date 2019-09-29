@@ -82,3 +82,7 @@ Podaj numer opcji: """)
 
         else:
             print('Nie ma takiej opcji!')
+
+
+if __name__ == '__main__':
+    main_loop()
