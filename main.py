@@ -1,35 +1,34 @@
-def download_file():
-    pass
+class TextAnalyzer:
+
+    def download_file(self):
+        pass
+
+    def count_letter(self):
+        pass
+
+    def count_words(self):
+        pass
+
+    def count_punctuation_marks(self):
+        pass
+
+    def count_sentences(self):
+        pass
+
+    def generate_report_of_letters_usage(self):
+        pass
+
+    def save_statistics_to_file(self):
+        pass
 
 
-def count_letter():
-    pass
+def main_loop():
+    ta = TextAnalyzer()
 
+    option = ''
 
-def count_words():
-    pass
-
-
-def count_punctuation_marks():
-    pass
-
-
-def count_sentences():
-    pass
-
-
-def generate_report_of_letters_usage():
-    pass
-
-
-def save_statistics_to_file():
-    pass
-
-
-option = ''
-
-while True:
-    print("""
+    while True:
+        print("""
 Analizator tekstu
     
 Menu:
@@ -44,42 +43,43 @@ Menu:
     
 Podaj numer opcji: """)
 
-    try:
-        option = int(input())
-    except:
-        print('Musisz podać liczbę!')
+        option = input()
 
-    if option == 1:
-        print('Download file')
-        download_file()
+        if option == '1':
+            print('Download file')
+            ta.download_file()
 
-    elif option == 2:
-        print('Count letters')
-        count_letter()
+        elif option == '2':
+            print('Count letters')
+            ta.count_letter()
 
-    elif option == 3:
-        print('Count words')
-        count_words()
+        elif option == '3':
+            print('Count words')
+            ta.count_words()
 
-    elif option == 4:
-        print('Count punctuation marks')
-        count_punctuation_marks()
+        elif option == '4':
+            print('Count punctuation marks')
+            ta.count_punctuation_marks()
 
-    elif option == 5:
-        print('Count sentences')
-        count_sentences()
+        elif option == '5':
+            print('Count sentences')
+            ta.count_sentences()
 
-    elif option == 6:
-        print('Generate report of letters usage')
-        generate_report_of_letters_usage()
+        elif option == '6':
+            print('Generate report of letters usage')
+            ta.generate_report_of_letters_usage()
 
-    elif option == 7:
-        print('Save statistics to file')
-        save_statistics_to_file()
+        elif option == '7':
+            print('Save statistics to file')
+            ta.save_statistics_to_file()
 
-    elif option == 8:
-        print('Koniec programu')
-        break
+        elif option == '8':
+            print('Koniec programu')
+            break
 
-    else:
-        print('Nie ma takiej opcji!')
+        else:
+            print('Nie ma takiej opcji!')
+
+
+if __name__ == '__main__':
+    main_loop()
