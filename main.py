@@ -23,6 +23,8 @@ class TextAnalyzer:
 
 
 def main_loop():
+    ta = TextAnalyzer()
+
     option = ''
 
     while True:
@@ -48,31 +50,31 @@ Podaj numer opcji: """)
 
         if option == 1:
             print('Download file')
-            download_file()
+            ta.download_file()
 
         elif option == 2:
             print('Count letters')
-            count_letter()
+            ta.count_letter()
 
         elif option == 3:
             print('Count words')
-            count_words()
+            ta.count_words()
 
         elif option == 4:
             print('Count punctuation marks')
-            count_punctuation_marks()
+            ta.count_punctuation_marks()
 
         elif option == 5:
             print('Count sentences')
-            count_sentences()
+            ta.count_sentences()
 
         elif option == 6:
             print('Generate report of letters usage')
-            generate_report_of_letters_usage()
+            ta.generate_report_of_letters_usage()
 
         elif option == 7:
             print('Save statistics to file')
-            save_statistics_to_file()
+            ta.save_statistics_to_file()
 
         elif option == 8:
             print('Koniec programu')
