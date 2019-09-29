@@ -43,40 +43,37 @@ Menu:
     
 Podaj numer opcji: """)
 
-        try:
-            option = int(input())
-        except:
-            print('Musisz podać liczbę!')
+        option = input()
 
-        if option == 1:
+        if option == '1':
             print('Download file')
             ta.download_file()
 
-        elif option == 2:
+        elif option == '2':
             print('Count letters')
             ta.count_letter()
 
-        elif option == 3:
+        elif option == '3':
             print('Count words')
             ta.count_words()
 
-        elif option == 4:
+        elif option == '4':
             print('Count punctuation marks')
             ta.count_punctuation_marks()
 
-        elif option == 5:
+        elif option == '5':
             print('Count sentences')
             ta.count_sentences()
 
-        elif option == 6:
+        elif option == '6':
             print('Generate report of letters usage')
             ta.generate_report_of_letters_usage()
 
-        elif option == 7:
+        elif option == '7':
             print('Save statistics to file')
             ta.save_statistics_to_file()
 
-        elif option == 8:
+        elif option == '8':
             print('Koniec programu')
             break
 
