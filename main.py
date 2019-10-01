@@ -22,7 +22,7 @@ class TextAnalyzer:
         return file_string
 
     def count_letter(self):
-        pass
+        return len(self.text_to_analyze)
 
     def count_words(self):
         pass
@@ -69,7 +69,7 @@ Podaj numer opcji: """)
 
         elif option == '2':
             print('Count letters')
-            ta.count_letter()
+            print(ta.count_letter())
 
         elif option == '3':
             print('Count words')
