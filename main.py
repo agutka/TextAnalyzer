@@ -1,7 +1,10 @@
 import requests
 from collections import Counter
 
+
 class TextAnalyzer:
+
+    file_to_analyze = ''
 
     def download_file(self):
 
@@ -57,7 +60,7 @@ Podaj numer opcji: """)
 
         if option == '1':
             print('Download file')
-            ta.download_file()
+            ta.file_to_analyze = ta.download_file()
 
         elif option == '2':
             print('Count letters')
