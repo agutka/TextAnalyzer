@@ -1,6 +1,4 @@
 import requests
-from collections import Counter
-
 
 class TextAnalyzer:
     text_to_analyze = ''
@@ -23,7 +21,7 @@ class TextAnalyzer:
         return len(self.text_to_analyze)
 
     def count_words(self):
-        pass
+        return len(self.text_to_analyze.split())
 
     def count_punctuation_marks(self):
         pass
@@ -71,7 +69,7 @@ Podaj numer opcji: """)
 
         elif option == '3':
             print('Count words')
-            ta.count_words()
+            print(ta.count_words())
 
         elif option == '4':
             print('Count punctuation marks')
