@@ -14,7 +14,12 @@ class TextAnalyzer:
         with open('./file.txt', 'wb') as file:
             file.write(response.content)
 
-        return response.content
+        file.close()
+
+        with open('file.txt', 'r') as file:
+            file_string = file.read()
+
+        return file_string
 
     def count_letter(self):
         pass
