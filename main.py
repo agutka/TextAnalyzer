@@ -4,7 +4,7 @@ from collections import Counter
 
 class TextAnalyzer:
 
-    file_to_analyze = ''
+    text_to_analyze = ''
 
     def download_file(self):
 
@@ -14,7 +14,7 @@ class TextAnalyzer:
         with open('./file.txt', 'wb') as file:
             file.write(response.content)
 
-        return file
+        return response.content
 
     def count_letter(self):
         pass
@@ -60,7 +60,7 @@ Podaj numer opcji: """)
 
         if option == '1':
             print('Download file')
-            ta.file_to_analyze = ta.download_file()
+            ta.text_to_analyze = ta.download_file()
 
         elif option == '2':
             print('Count letters')
