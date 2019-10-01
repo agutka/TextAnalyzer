@@ -1,20 +1,26 @@
 import requests
 from collections import Counter
 
+
 class TextAnalyzer:
+    text_to_analyze = ''
 
     def download_file(self):
-
         url = 'https://s3.zylowski.net/public/input/1.txt'
         response = requests.get(url)
 
         with open('./file.txt', 'wb') as file:
             file.write(response.content)
 
-        return file
+        file.close()
+
+        with open('file.txt', 'r') as file:
+            file_string = file.read()
+
+        return file_string
 
     def count_letter(self):
-        pass
+        return len(self.text_to_analyze)
 
     def count_words(self):
         pass
@@ -40,7 +46,7 @@ def main_loop():
     while True:
         print("""
 Analizator tekstu
-    
+
 Menu:
     1. Pobierz plik z internetu
     2. Zlicz liczbę liter w pobranym pliku
@@ -50,18 +56,18 @@ Menu:
     6. Wygeneruj raport o użyciu liter (A-Z)
     7. Zapisz statystyki z punktów 2-5 do pliku statystyki.txt
     8. Wyjście z programu
-    
+
 Podaj numer opcji: """)
 
         option = input()
 
         if option == '1':
             print('Download file')
-            ta.download_file()
+            ta.text_to_analyze = ta.download_file()
 
         elif option == '2':
             print('Count letters')
-            ta.count_letter()
+            print(ta.count_letter())
 
         elif option == '3':
             print('Count words')
