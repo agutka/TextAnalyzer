@@ -1,4 +1,5 @@
 import requests
+from collections import Counter
 
 class TextAnalyzer:
 
@@ -7,7 +8,7 @@ class TextAnalyzer:
         url = 'https://s3.zylowski.net/public/input/1.txt'
         response = requests.get(url)
 
-        with open('../file.txt', 'wb') as file:
+        with open('./file.txt', 'wb') as file:
             file.write(response.content)
 
         return file
