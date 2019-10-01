@@ -5,15 +5,12 @@ class TextAnalyzer:
     def download_file(self):
 
         url = 'https://s3.zylowski.net/public/input/1.txt'
-        r = requests.get(url)
+        response = requests.get(url)
 
-        with open('/Users/Vaio/Desktop/pyProject/pobranyPlik.txt', 'wb') as f:
-            f.write(r.content)
+        with open('../file.txt', 'wb') as file:
+            file.write(response.content)
 
-        # Recive HTTP meta-data
-        print(r.status_code)
-        print(r.headers['content-type'])
-        print(r.encoding)
+        return file
 
     def count_letter(self):
         pass
