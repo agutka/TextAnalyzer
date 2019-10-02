@@ -92,7 +92,9 @@ Podaj numer opcji: """)
 
         elif option == '6':
             print('Generate report of letters usage')
-            print(ta.generate_report_of_letters_usage())
+            counted_letters = ta.generate_report_of_letters_usage()
+            for letter in counted_letters:
+                print(letter + ': ' + str(counted_letters[letter]))
 
         elif option == '7':
             print('Save statistics to file')
