@@ -1,13 +1,9 @@
 import requests
-from collections import Counter
-
 
 class TextAnalyzer:
-
     text_to_analyze = ''
 
     def download_file(self):
-
         url = 'https://s3.zylowski.net/public/input/1.txt'
         response = requests.get(url)
 
@@ -25,7 +21,7 @@ class TextAnalyzer:
         return len(self.text_to_analyze)
 
     def count_words(self):
-        pass
+        return len(self.text_to_analyze.split())
 
     def count_punctuation_marks(self):
         pass
@@ -48,7 +44,7 @@ def main_loop():
     while True:
         print("""
 Analizator tekstu
-    
+
 Menu:
     1. Pobierz plik z internetu
     2. Zlicz liczbę liter w pobranym pliku
@@ -58,7 +54,7 @@ Menu:
     6. Wygeneruj raport o użyciu liter (A-Z)
     7. Zapisz statystyki z punktów 2-5 do pliku statystyki.txt
     8. Wyjście z programu
-    
+
 Podaj numer opcji: """)
 
         option = input()
@@ -73,7 +69,7 @@ Podaj numer opcji: """)
 
         elif option == '3':
             print('Count words')
-            ta.count_words()
+            print(ta.count_words())
 
         elif option == '4':
             print('Count punctuation marks')
