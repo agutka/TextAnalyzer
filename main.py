@@ -28,16 +28,16 @@ class TextAnalyzer:
         pass
 
     def count_sentences(self):
+        pass
+
+    def generate_report_of_letters_usage(self):
         number_of_every_letters = {}
 
         # great letters A-Z -> dec 65-90
         for ascii_code in range(65, 90):
             number_of_every_letters[chr(ascii_code)] = self.text_to_analyze.count(chr(ascii_code))
-        
-        return number_of_every_letters
 
-    def generate_report_of_letters_usage(self):
-        pass
+        return number_of_every_letters
 
     def save_statistics_to_file(self):
         pass
@@ -88,7 +88,7 @@ Podaj numer opcji: """)
 
         elif option == '6':
             print('Generate report of letters usage')
-            ta.generate_report_of_letters_usage()
+            print(ta.generate_report_of_letters_usage())
 
         elif option == '7':
             print('Save statistics to file')
