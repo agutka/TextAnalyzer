@@ -37,6 +37,10 @@ class TextAnalyzer:
         for ascii_code in range(65, 91):
             number_of_every_letters[chr(ascii_code)] = self.text_to_analyze.count(chr(ascii_code))
 
+        # little letters a-z -> dec 97-122
+        for ascii_code in range(97, 123):
+            number_of_every_letters[chr(ascii_code)] = self.text_to_analyze.count(chr(ascii_code))
+
         return number_of_every_letters
 
     def save_statistics_to_file(self):
