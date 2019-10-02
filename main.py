@@ -1,5 +1,6 @@
 import requests
 
+
 class TextAnalyzer:
     text_to_analyze = ''
 
@@ -27,7 +28,13 @@ class TextAnalyzer:
         pass
 
     def count_sentences(self):
-        pass
+        number_of_every_letters = {}
+
+        # great letters A-Z -> dec 65-90
+        for ascii_code in range(65, 90):
+            number_of_every_letters[chr(ascii_code)] = self.text_to_analyze.count(chr(ascii_code))
+        
+        return number_of_every_letters
 
     def generate_report_of_letters_usage(self):
         pass
