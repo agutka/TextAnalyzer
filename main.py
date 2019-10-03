@@ -1,4 +1,5 @@
 import requests
+import os
 
 class TextAnalyzer:
     text_to_analyze = None
@@ -21,6 +22,9 @@ class TextAnalyzer:
         return len(self.text_to_analyze)
 
     def count_words(self):
+        if not os.path.isfile('./file.txt'):
+            print("Wybacz, plik nie istnieje.")
+
         return len(self.text_to_analyze.split())
 
     def count_punctuation_marks(self):
@@ -71,9 +75,17 @@ class TextAnalyzer:
     def save_statistics_to_file(self):
         pass
 
+    def exiting_program(self):
+        pathToFile = './file.txt'
+        if os.path.isfile(pathToFile):
+            os.unlink(pathToFile)
+        else:
+            print("Wybacz, plik nie istnieje.")
+
 
 def main_loop():
     ta = TextAnalyzer()
+    ta.text_to_analyze = ta.download_file()
 
     option = ''
 
@@ -132,6 +144,7 @@ Podaj numer opcji: """)
             ta.save_statistics_to_file()
 
         elif option == '8':
+            ta.exiting_program()
             print('Koniec programu')
             break
 
