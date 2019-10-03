@@ -3,6 +3,7 @@ import os
 
 class TextAnalyzer:
     text_to_analyze = None
+    pathToFile = './file.txt'
 
     def download_file(self):
         url = 'https://s3.zylowski.net/public/input/1.txt'
@@ -22,9 +23,6 @@ class TextAnalyzer:
         return len(self.text_to_analyze)
 
     def count_words(self):
-        if not os.path.isfile('./file.txt'):
-            print("Wybacz, plik nie istnieje.")
-
         return len(self.text_to_analyze.split())
 
     def count_punctuation_marks(self):
@@ -76,9 +74,11 @@ class TextAnalyzer:
         pass
 
     def exiting_program(self):
-        pathToFile = './file.txt'
-        if os.path.isfile(pathToFile):
-            os.unlink(pathToFile)
+        if os.path.isfile('statistics.txt'):
+            os.unlink('statistics.txt')
+
+        if os.path.isfile(self.pathToFile):
+            os.unlink(self.pathToFile)
         else:
             print("Wybacz, plik nie istnieje.")
 
@@ -117,7 +117,11 @@ Podaj numer opcji: """)
 
         elif option == '3':
             print('Count words')
-            print(ta.count_words())
+
+            if os.path.isfile(TextAnalyzer.pathToFile):
+                print(ta.count_words())
+            else:
+                print("Błąd! Brak pobranego pliku!")
 
         elif option == '4':
             print('Count punctuation marks')
