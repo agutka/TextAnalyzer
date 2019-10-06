@@ -37,7 +37,19 @@ class TextAnalyzer:
         return number_of_punctuation_marks
 
     def count_sentences(self):
-        pass
+        if self.text_to_analyze is None:
+            return None
+
+        sentences = [".", "!", "?"]
+
+        number_of_sentences = 0
+
+        for punctuation_mark in sentences:
+            number_of_sentences += self.text_to_analyze.count(punctuation_mark)
+
+        return number_of_sentences
+
+        #pass
 
     def generate_report_of_letters_usage(self):
         if self.text_to_analyze is None:
@@ -101,11 +113,10 @@ Podaj numer opcji: """)
             if counted_punctuations is None:
                 print("Błąd! Brak pobranego pliku")
             else:
-                print (ta.count_punctuation_marks())
+                print (counted_punctuations)
 
         elif option == '5':
-            print('Count sentences')
-            ta.count_sentences()
+           pass
 
         elif option == '6':
             print('Generate report of letters usage')
