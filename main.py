@@ -37,9 +37,7 @@ class TextAnalyzer:
         return number_of_punctuation_marks
 
     def count_sentences(self):
-        if self.text_to_analyze is None:
-            return None
-
+        pass
 
     def generate_report_of_letters_usage(self):
         if self.text_to_analyze is None:
