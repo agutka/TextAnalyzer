@@ -1,6 +1,5 @@
 import requests
 
-
 class TextAnalyzer:
     text_to_analyze = None
 
@@ -25,12 +24,24 @@ class TextAnalyzer:
         return len(self.text_to_analyze.split())
 
     def count_punctuation_marks(self):
-        pass
+        if self.text_to_analyze is None:
+            return None
+
+        punctuation_marks = [",", ".", "!", ":", ";", "?", "-"]
+
+        number_of_punctuation_marks = 0
+
+        for punctuation_mark in punctuation_marks:
+            number_of_punctuation_marks += self.text_to_analyze.count(punctuation_mark)
+
+        return number_of_punctuation_marks
 
     def count_sentences(self):
-        pass
+        if self.text_to_analyze is None:
+            return None
 
-    def generate_report_of_letters_usage(self):
+
+        def generate_report_of_letters_usage(self):
         if self.text_to_analyze is None:
             return None
 
@@ -88,7 +99,11 @@ Podaj numer opcji: """)
 
         elif option == '4':
             print('Count punctuation marks')
-            ta.count_punctuation_marks()
+            counted_punctuations = ta.count_punctuation_marks()
+            if counted_punctuations is None:
+                print("Błąd! Brak pobranego pliku")
+            else:
+                print (ta.count_punctuation_marks())
 
         elif option == '5':
             print('Count sentences')
