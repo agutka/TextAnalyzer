@@ -41,7 +41,7 @@ class TextAnalyzer:
             return None
 
 
-        def generate_report_of_letters_usage(self):
+    def generate_report_of_letters_usage(self):
         if self.text_to_analyze is None:
             return None
 
