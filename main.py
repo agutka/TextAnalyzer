@@ -41,17 +41,18 @@ class TextAnalyzer:
     def count_sentences(self):
         if self.text_to_analyze is None:
             return None
+        else:
 
-        sentences = [".", "!", "?"]
+            number_of_sentences = 0
 
-        number_of_sentences = 0
+            for i in range(0, len(self.text_to_analyze)):
 
-        for punctuation_mark in sentences:
-            number_of_sentences += self.text_to_analyze.count(punctuation_mark)
+                if self.text_to_analyze[i] == '.' or self.text_to_analyze[i] == '!' or self.text_to_analyze[i] == '?':
 
-        return number_of_sentences
+                    if self.text_to_analyze[i + 1] != '.' and self.text_to_analyze[i + 1] != '!' and self.text_to_analyze[i + 1] != '?':
+                        number_of_sentences += 1
 
-        #pass
+            return number_of_sentences
 
     def generate_report_of_letters_usage(self):
         if self.text_to_analyze is None:
@@ -132,7 +133,12 @@ Podaj numer opcji: """)
                 print (counted_punctuations)
 
         elif option == '5':
-           pass
+            print('Count sentences')
+            counted_sentences = ta.count_sentences()
+            if counted_sentences is None:
+                print("Błąd! Brak pobranego pliku")
+            else:
+                print(counted_sentences)
 
         elif option == '6':
             print('Generate report of letters usage')
