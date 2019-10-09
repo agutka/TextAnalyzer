@@ -72,7 +72,17 @@ class TextAnalyzer:
             return number_of_every_letters
 
     def save_statistics_to_file(self):
-        pass
+        f = open("statistics.txt", "w")
+        letter = "Ilość liter: " + str(self.count_letter())
+        words = "\n\nIlość wyrazów: " + str(self.count_words())
+        punctuation = "\n\nIlość znaków interpunkcyjnych: " + str(self.count_punctuation_marks())
+        sentences = "\n\nIlość zdań: " + str(self.count_sentences())
+        f.write(letter)
+        f.write(words)
+        f.write(punctuation)
+        f.write(sentences)
+        f.close()
+        #pass
 
     def exiting_program(self):
         if os.path.isfile('statistics.txt'):
