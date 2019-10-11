@@ -1,6 +1,7 @@
 import requests
 import os
 
+
 class TextAnalyzer:
     text_to_analyze = None
     pathToFile = './file.txt'
@@ -55,7 +56,8 @@ class TextAnalyzer:
 
                 if self.text_to_analyze[i] == '.' or self.text_to_analyze[i] == '!' or self.text_to_analyze[i] == '?':
 
-                    if self.text_to_analyze[i + 1] != '.' and self.text_to_analyze[i + 1] != '!' and self.text_to_analyze[i + 1] != '?':
+                    if self.text_to_analyze[i + 1] != '.' and self.text_to_analyze[i + 1] != '!' and \
+                            self.text_to_analyze[i + 1] != '?':
                         number_of_sentences += 1
 
             return number_of_sentences
@@ -107,8 +109,6 @@ def main_loop():
     ta = TextAnalyzer()
     ta.text_to_analyze = ta.download_file()
 
-    option = ''
-
     while True:
         print("""
 Analizator tekstu
@@ -153,7 +153,7 @@ Podaj numer opcji: """)
             if counted_punctuations is None:
                 print("Błąd! Brak pobranego pliku")
             else:
-                print (counted_punctuations)
+                print(counted_punctuations)
 
         elif option == '5':
             print('Count sentences')
