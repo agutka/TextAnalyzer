@@ -20,10 +20,16 @@ class TextAnalyzer:
         return file_string
 
     def count_letter(self):
-        return len(self.text_to_analyze)
+        if self.text_to_analyze is None:
+            return None
+        else:
+            return len(self.text_to_analyze)
 
     def count_words(self):
-        return len(self.text_to_analyze.split())
+        if self.text_to_analyze is None:
+            return None
+        else:
+            return len(self.text_to_analyze.split())
 
     def count_punctuation_marks(self):
         if self.text_to_analyze is None:
@@ -127,7 +133,11 @@ Podaj numer opcji: """)
 
         elif option == '2':
             print('Count letters')
-            print(ta.count_letter())
+            counted_letter = ta.count_letter()
+            if counted_letter is None:
+                print("Błąd! Brak pobranego pliku")
+            else:
+                print(counted_letter)
 
         elif option == '3':
             print('Count words')
