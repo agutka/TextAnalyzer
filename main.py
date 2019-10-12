@@ -36,7 +36,7 @@ class TextAnalyzer:
         if self.text_to_analyze is None:
             return None
 
-        punctuation_marks = [",", ".", "!", ":", ";", "?", "-"]
+        punctuation_marks = [".", "?"]
 
         number_of_punctuation_marks = 0
 
