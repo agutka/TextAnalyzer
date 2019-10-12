@@ -54,10 +54,9 @@ class TextAnalyzer:
 
             for i in range(0, len(self.text_to_analyze)):
 
-                if self.text_to_analyze[i] == '.' or self.text_to_analyze[i] == '!' or self.text_to_analyze[i] == '?':
+                if self.text_to_analyze[i] == '.' or self.text_to_analyze[i] == '?':
 
-                    if self.text_to_analyze[i + 1] != '.' and self.text_to_analyze[i + 1] != '!' and \
-                            self.text_to_analyze[i + 1] != '?':
+                    if self.text_to_analyze[i + 1] != '.' and self.text_to_analyze[i + 1] != '?':
                         number_of_sentences += 1
 
             return number_of_sentences
